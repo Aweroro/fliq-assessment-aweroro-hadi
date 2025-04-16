@@ -38,7 +38,7 @@ const HeroSection = () => {
           transition={{ duration: 0.6 }}
           className="text-md md:text-lg text-gray-400 max-w-2xl mx-auto"
         >
-          Experience the future of banking with Fliq. We're here to empower your financial journey.
+          Experience the future of banking with Fliq. We&apos;re here to empower your financial journey.
         </motion.p>
 
         <motion.div
