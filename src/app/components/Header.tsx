@@ -5,19 +5,17 @@ import PrimaryButton from './PrimaryButton'
 const Header = () => {
   return (
     <header className='flex items-center justify-between px-10 py-2'>
-     <div className='flex'>
-       <div className='flex'>
+     <div className="flex items-center">
         <Image
-            src={'/logo.png'}
-            alt='fliq logo'
+            src="/logo.png"
+            alt="Fliq logo"
             width={40}
             height={20}
-            />
-            <span className='flex flex-col'>
-                <h3 className='font-bold text-3xl'>FLIQ</h3>
-                <p className='flex justify-end text-sm'>by Blend</p>
-            </span>
-       </div>
+        />
+        <span className="flex flex-col ml-3">
+            <h3 className="font-bold text-3xl">FLIQ</h3>
+            <p className="text-sm flex justify-end text-gray-400">by Blend</p>
+        </span>
      </div>
       <nav className="hidden md:flex gap-16 text-gray-300 text-lg">
             <a
