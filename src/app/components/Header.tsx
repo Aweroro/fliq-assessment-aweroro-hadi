@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Image from 'next/image'
 import PrimaryButton from './PrimaryButton'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { motion } from 'framer-motion'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,13 +13,19 @@ const Header = () => {
   return (
     <header className="flex flex-col md:flex-row items-center justify-between px-4 md:px-10 py-4 gap-4 md:gap-0">
       <div className="flex items-center justify-between w-full md:w-auto">
-        <div className="flex items-center">
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex items-center"
+        >
           <Image src="/logo.png" alt="Fliq logo" width={40} height={20} />
           <span className="flex flex-col ml-3">
             <h3 className="font-bold text-xl md:text-3xl">FLIQ</h3>
             <p className="text-xs md:text-sm flex justify-end text-gray-400">by Blend</p>
           </span>
-        </div>
+        </motion.div>
 
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? (
@@ -29,7 +36,12 @@ const Header = () => {
         </button>
       </div>
 
-      <nav className="hidden md:flex gap-8 lg:gap-16 text-gray-300 text-base lg:text-lg">
+      <motion.nav
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="hidden md:flex gap-8 lg:gap-16 text-gray-300 text-base lg:text-lg"
+      >
         {navItems.map((text, index) => (
           <a
             key={index}
@@ -39,17 +51,27 @@ const Header = () => {
             {text}
           </a>
         ))}
-      </nav>
+      </motion.nav>
 
-      <div className="hidden md:flex">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="hidden md:flex"
+      >
         <PrimaryButton title="Join the waitlist" className="text-sm md:text-base" />
-      </div>
+      </motion.div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden flex flex-col items-center w-full text-text py-4 space-y-4">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.3 }}
+          className="md:hidden flex flex-col items-center w-full text-text py-4 space-y-4"
+        >
           {navItems.map((text) => (
-            <a
+            <motion.a
               key={text}
               href="#"
               onClick={() => setIsOpen(false)}
@@ -57,12 +79,21 @@ const Header = () => {
                 after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px]
                 after:bg-violet-600 after:bottom-0 after:left-0 after:transition-transform
                 after:duration-500 after:origin-left hover:after:scale-x-100"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
             >
               {text}
-            </a>
+            </motion.a>
           ))}
-          <PrimaryButton title="Join the waitlist" className="text-sm md:text-base w-fit"/>
-        </div>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3 }}
+          >
+            <PrimaryButton title="Join the waitlist" className="text-sm md:text-base w-fit"/>
+          </motion.div>
+        </motion.div>
       )}
     </header>
   )
