@@ -25,11 +25,11 @@ const CardFeatures = () => {
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
         {features.map((f, i) => (
           <div key={i}>
-            <div className='flex justify-start items-center'>
+            <div className='flex justify-center md:justify-start items-center'>
                 <div className="flex justify-center items-center mb-4">{f.icon}</div>
                 <h3 className="font-semibold mb-2">{f.title}</h3>
             </div>
-            <p className="text-sm text-gray-400">{f.description}</p>
+            <p className="text-xs md:text- text-center md:text-left text-gray-400">{f.description}</p>
           </div>
         ))}
         <div className="mt-40 flex items-center">
