@@ -15,7 +15,7 @@ const HeroSection = () => {
         Building the future of banking.
       </h1>
 
-      <p className="text-lg text-gray-200 max-w-2xl mx-auto">
+      <p className="text-lg text-gray-400 max-w-2xl mx-auto">
         Experience the future of banking with Fliq. We're here to empower your financial journey.
       </p>
 
