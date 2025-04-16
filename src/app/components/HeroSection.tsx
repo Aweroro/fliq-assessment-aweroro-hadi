@@ -6,21 +6,21 @@ const HeroSection = () => {
   return (
     <section className="relative border-white/15 border-t-1 px-4 md:px-10 py-20 text-center overflow-hidden">
     <div className="max-w-4xl mx-auto space-y-6 z-10 relative">
-      <div className="inline-flex cursor-pointer items-center gap-2 px-4 py-1 rounded-full border bg-white/15 font-semibold text-gray-200 border-white/15 text-sm hover:bg-gray-800 transition">
+      <div className="inline-flex cursor-pointer text-nowrap items-center gap-2 px-4 py-1 rounded-full border bg-white/15 font-semibold text-gray-200 border-white/15 text-xs md:text-base hover:bg-gray-800 transition">
         Introducing Fliq Mobile banking App
-        <span className="text-xl">{'>'}</span>
+        <span className="text-xs md:text-xl">{'>'}</span>
       </div>
 
-      <h1 className="text-4xl md:text-7xl font-bold tracking-tight">
+      <h1 className="text-3xl md:text-7xl font-bold tracking-tight">
         Building the future of banking.
       </h1>
 
-      <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+      <p className="text-md md:text-lg text-gray- max-w-2xl mx-auto">
         Experience the future of banking with Fliq. We're here to empower your financial journey.
       </p>
 
       <PrimaryButton
-      title='Get Started'/>
+      title='Get Started' className='text-xs md:text-base'/>
     </div>
 
     <div className="mt-16 max-w-6xl mx-auto rounded-2xl overflow-hidden">
